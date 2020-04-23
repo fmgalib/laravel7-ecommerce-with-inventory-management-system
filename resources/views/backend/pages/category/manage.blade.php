@@ -21,8 +21,8 @@
                 <table class="table">
 				  <thead class="thead-dark">
 				    <tr>
-				      <th scope="col">Sl No</th>
-				      <th scope="col">Nmae</th>
+				      <th scope="col">ID</th>
+				      <th scope="col">Name</th>
 				      <th scope="col">Slug</th>
 				      <th scope="col">Description</th>
 				      <th scope="col">Image</th>
