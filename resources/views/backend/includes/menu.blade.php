@@ -23,7 +23,7 @@
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
             <li class="sub-item"><a href="{{ route('manageCategory') }}" class="sub-link">All Categories</a></li>
-            <li class="sub-item"><a href="" class="sub-link">Add New Category</a></li>
+            <li class="sub-item"><a href="{{ route('createCategory') }}" class="sub-link">Add New Category</a></li>
           </ul>
         </li>
         <!-- Manage Category End -->

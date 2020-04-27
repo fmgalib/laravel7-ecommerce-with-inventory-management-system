@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use File;
+use Image;
 
 class CategoryController extends Controller
 {
@@ -25,7 +29,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $parent_categories = Category::orderBy('name', 'asc')->where('parent_id', 0)->get();
+        return view('backend.pages.category.create', compact('parent_categories'));
     }
 
     /**
@@ -36,7 +41,29 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+            'cat_name'         => 'required|max:255',
+            
+        ]);
+
+        $category = new Category();
+
+        $category->name         = $request->cat_name;
+        $category->slug         = Str::slug($request->cat_name);
+        $category->description  = $request->cat_description;
+        
+
+        if ( $request->image )
+        {
+            $image = $request->file('image');
+            $img = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('images/categories/' . $img);
+            Image::make($image)->save($location);
+            $category->image = $img; 
+        }
+
+        $category->save();
+        return redirect()->route('manageCategory');
     }
 
     /**

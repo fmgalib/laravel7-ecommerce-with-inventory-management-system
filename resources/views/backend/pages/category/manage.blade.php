@@ -12,12 +12,15 @@
 
       <div class="br-pagebody">
         <div class="br-section-wrapper">
-          <h6 class="br-section-label">Card Block</h6>
-          <p class="br-section-text">An example some text within a card block.</p>
+         {{--  <h6 class="br-section-label">Card Block</h6>
+          <p class="br-section-text">An example some text within a card block.</p> --}}
+
+
 
           <div class="row mg-b-20">
             <div class="col-md">
-              <div class="card card-body">
+              <div class="card card-body"> 	
+
                 <table class="table">
 				  <thead class="thead-dark">
 				    <tr>
@@ -42,7 +45,7 @@
 				      	@if( $category->image == null )
 				      		No Image Attached
 				      	@else
-				      		<img src="{{ $category->image }}">	
+				      		<img src="{{ asset('images/categories/' . $category->image) }}" width="80">	
 				      	@endif
 				      </td>
 				      <td>{{ $category->parent_id }}</td>
