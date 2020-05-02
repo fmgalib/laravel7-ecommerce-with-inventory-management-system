@@ -24,7 +24,9 @@
       @yield('dashboard-content')
       
       @include('backend.includes.footer')
+      
     </div><!-- br-mainpanel -->
+
     <!-- ########## END: MAIN PANEL ########## -->
     @include('backend.includes.script')
   </body>

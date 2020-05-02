@@ -52,7 +52,7 @@
 
 		        	<div >
 			      	<input type="submit" name="addCategory" value="Add Category" class="btn btn-primary">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
+			        
 			      </div>
 		       </form>
              

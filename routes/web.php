@@ -18,8 +18,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +35,14 @@ Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
 Route::group(['prefix' => '/categories'], function(){
 
-	Route::get('/manage', 'CategoryController@index')->name('manageCategory');
-
-	Route::get('/create', 'CategoryController@create')->name('createCategory');
-	Route::post('/create', 'CategoryController@store')->name('storeCategory');
+	Route::get('/manage', 'Backend\CategoryController@index')->name('manageCategory');
+	// Show create page and store after submit
+	Route::get('/create', 'Backend\CategoryController@create')->name('createCategory');
+	Route::post('/create', 'Backend\CategoryController@store')->name('storeCategory');
+	// Show edit page and update after submit
+	Route::get('/edit/{id}', 'Backend\CategoryController@edit')->name('editCategory');
+	Route::post('/edit/{id}', 'Backend\CategoryController@update')->name('updateCategory');
+	// Delete category
+	Route::post('/delete/{id}', 'Backend\CategoryController@destroy')->name('deleteCategory');
 
 });

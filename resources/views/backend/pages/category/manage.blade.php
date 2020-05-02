@@ -48,12 +48,45 @@
 				      		<img src="{{ asset('images/categories/' . $category->image) }}" width="80">	
 				      	@endif
 				      </td>
-				      <td>{{ $category->parent_id }}</td>
+				      <td>
+				      	@if($category->parent_id == 0)
+				      		Primary Category
+				      	@else
+				      		{{$category->parent->name}}
+				      	@endif	
+				      </td>
 				      <td>
 				      	<div class="btn-group">
-				      		<a class="btn btn-success btn-sm" href="">Edit</a>
-				      		<a class="btn btn-danger btn-sm" href="">Delete</a>
+				      		<a class="btn btn-success btn-sm" href="{{ route('editCategory', $category->id ) }}">Edit</a>
+				      		<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteCategory{{$category->id}}">Delete</button>
 				      	</div>
+
+				      	<!-- Modal -->
+						<div class="modal fade" id="deleteCategory{{$category->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="exampleModalLabel">Delete Category</h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						          <span aria-hidden="true">&times;</span>
+						        </button>
+						      </div>
+						      <div class="modal-body">
+						      	Do you want to delete this category?
+
+						      </div>
+						      <div class="modal-footer">
+						       	<form action="{{ route('deleteCategory', $category->id) }}" method="POST">
+						      		@csrf
+						      		<button type="submit" class="btn btn-danger">Delete</button> 
+						      	</form>
+						       	
+						       <span><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button></span>
+						      </div>
+
+						  </div>
+						</div>
+
 				      </td>
 				    </tr>
 				  	@endforeach
