@@ -50,6 +50,9 @@ Route::group(['prefix' => '/categories'], function(){
 
 Route::group(['prefix' => '/brands'], function(){
 
-	Route::get('/manage', 'Backend\BrandController@index')->name('manageBrand');	
+	Route::get('/manage', 'Backend\BrandController@index')->name('manageBrand');
+	// Show create page and store after submit
+	Route::get('/create', 'Backend\BrandController@create')->name('createBrand'); 
+	Route::post('/create', 'Backend\BrandController@store')->name('storeBrand');
 
 });

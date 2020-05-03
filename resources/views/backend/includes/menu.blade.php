@@ -36,7 +36,7 @@
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
             <li class="sub-item"><a href="{{ route('manageBrand') }}" class="sub-link">All Brands</a></li>
-            <li class="sub-item"><a href="{{ route('createCategory') }}" class="sub-link">Add New Brand</a></li>
+            <li class="sub-item"><a href="{{ route('createBrand') }}" class="sub-link">Add New Brand</a></li>
           </ul>
         </li><!-- br-menu-item -->
         <li class="br-menu-item">
