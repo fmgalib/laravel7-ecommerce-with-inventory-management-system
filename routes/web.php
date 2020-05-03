@@ -54,5 +54,10 @@ Route::group(['prefix' => '/brands'], function(){
 	// Show create page and store after submit
 	Route::get('/create', 'Backend\BrandController@create')->name('createBrand'); 
 	Route::post('/create', 'Backend\BrandController@store')->name('storeBrand');
+	// Show edit page and update after submit
+	Route::get('/edit/{id}', 'Backend\BrandController@edit')->name('editBrand');
+	Route::post('/edit/{id}', 'Backend\BrandController@update')->name('updateBrand');
+	// Delete category
+	Route::post('/delete/{id}', 'Backend\BrandController@destroy')->name('deleteBrand');
 
 });

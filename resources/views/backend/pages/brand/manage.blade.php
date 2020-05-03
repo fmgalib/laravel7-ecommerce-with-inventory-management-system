@@ -51,11 +51,11 @@
 				      <td>
 				      	<div class="btn-group">
 				      		<a class="btn btn-success btn-sm" href="">Edit</a>
-				      		<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteCategory">Delete</button>
+				      		<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteBrand{{ $brand->id }}">Delete</button>
 				      	</div>
 
 				      	<!-- Modal -->
-						<div class="modal fade" id="deleteCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal fade" id="deleteBrand{{ $brand->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						  <div class="modal-dialog" role="document">
 						    <div class="modal-content">
 						      <div class="modal-header">
@@ -69,7 +69,7 @@
 
 						      </div>
 						      <div class="modal-footer">
-						       	<form action="" method="POST">
+						       	<form action="{{ route('deleteBrand', $brand->id) }}" method="POST">
 						      		@csrf
 						      		<button type="submit" class="btn btn-danger">Delete</button> 
 						      	</form>
