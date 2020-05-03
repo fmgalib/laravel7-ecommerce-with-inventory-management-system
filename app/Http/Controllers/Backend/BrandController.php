@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Backend\Brand;
+use Illuminate\Support\Str;
+use File;
+use Image;
 
 class BrandController extends Controller
 {
@@ -14,7 +18,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        //
+        $brands = Brand::orderBy('id', 'desc')->get();
+        return view('backend.pages.brand.manage', compact('brands'));
     }
 
     /**

@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/home', 'HomeController@index')->name('dashboard');
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
 
@@ -44,5 +45,11 @@ Route::group(['prefix' => '/categories'], function(){
 	Route::post('/edit/{id}', 'Backend\CategoryController@update')->name('updateCategory');
 	// Delete category
 	Route::post('/delete/{id}', 'Backend\CategoryController@destroy')->name('deleteCategory');
+
+});
+
+Route::group(['prefix' => '/brands'], function(){
+
+	Route::get('/manage', 'Backend\BrandController@index')->name('manageBrand');	
 
 });
