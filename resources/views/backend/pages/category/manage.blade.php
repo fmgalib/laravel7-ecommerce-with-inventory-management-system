@@ -6,7 +6,7 @@
         <i class="icon ion-ios-home-outline"></i>
         <div>
           <h4>Manage Categories</h4>
-          <p class="mg-b-0">Do bigger things with Bracket plus, the responsive bootstrap 4 admin template.</p>
+          <p class="mg-b-0">Manage all your categories</p>
         </div>
       </div>
 

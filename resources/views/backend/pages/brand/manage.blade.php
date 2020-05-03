@@ -6,7 +6,7 @@
         <i class="icon ion-ios-home-outline"></i>
         <div>
           <h4>Manage Brands</h4>
-          <p class="mg-b-0">Do bigger things with Bracket plus, the responsive bootstrap 4 admin template.</p>
+          <p class="mg-b-0">Manage all your brands</p>
         </div>
       </div>
 
@@ -50,7 +50,7 @@
 				      
 				      <td>
 				      	<div class="btn-group">
-				      		<a class="btn btn-success btn-sm" href="">Edit</a>
+				      		<a class="btn btn-success btn-sm" href="{{ route('editBrand', $brand->id) }}">Edit</a>
 				      		<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteBrand{{ $brand->id }}">Delete</button>
 				      	</div>
 
