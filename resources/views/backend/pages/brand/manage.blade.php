@@ -20,7 +20,8 @@
           <div class="row mg-b-20">
             <div class="col-md">
               <div class="card card-body"> 	
-
+              
+              	
                 <table class="table">
 				  <thead class="thead-dark">
 				    <tr>
@@ -44,7 +45,7 @@
 				      	@if( $brand->image == null )
 				      		No Image Attached
 				      	@else
-				      		<img src="{{ asset('images/brands/' . $brand->image) }}" width="80">	
+				      		<img src="{{ asset('images/brands/' . $brand->image) }}" width="50">	
 				      	@endif
 				      </td>
 				      
@@ -54,7 +55,9 @@
 				      		<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteBrand{{ $brand->id }}">Delete</button>
 				      	</div>
 
-				      	<!-- Modal -->
+
+				      	
+				      	<!-- Delete Modal -->
 						<div class="modal fade" id="deleteBrand{{ $brand->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						  <div class="modal-dialog" role="document">
 						    <div class="modal-content">
@@ -87,6 +90,7 @@
 				    
 				  </tbody>
 				</table>
+
               </div><!-- card -->
             </div><!-- col -->
             

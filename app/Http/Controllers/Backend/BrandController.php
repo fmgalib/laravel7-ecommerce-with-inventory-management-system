@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Backend\Brand;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use File;
 use Image;
@@ -97,8 +97,10 @@ class BrandController extends Controller
         if ( !is_null($brand) ){
             return view('backend.pages.brand.edit', compact('brand'));
         }else{
-            return route('editBrand');
+            return route('manageBrand');
         }
+
+        
     }
 
     /**
