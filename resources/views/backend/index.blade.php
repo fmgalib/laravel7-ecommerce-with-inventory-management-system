@@ -358,6 +358,8 @@
 
           </div><!-- col-4 -->
         </div><!-- row -->
-        
-      </div><!-- br-pagebody -->
+      </div><!-- br-pagebody -->  
+
+    </div>
+
 @endsection

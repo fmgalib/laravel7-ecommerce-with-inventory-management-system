@@ -17,27 +17,20 @@
 
         {{-- Manage Brand start --}}
         <li class="br-menu-item">
-          <a href="#" class="br-menu-link with-sub">
+          <a href="{{ route('manageBrand') }}" class="br-menu-link">
             <i class="menu-item-icon ion-ios-briefcase-outline tx-24"></i>
             <span class="menu-item-label">Manage Brands</span>
           </a><!-- br-menu-link -->
-          <ul class="br-menu-sub">
-            <li class="sub-item"><a href="{{ route('manageBrand') }}" class="sub-link">All Brands</a></li>
-            <li class="sub-item"><a href="{{ route('createBrand') }}" class="sub-link">Add New Brand</a></li>
-          </ul>
         </li><!-- br-menu-item -->
+        {{-- Manage Brand end --}}
 
-        <!-- Manage Category Start -->  
+        {{-- Manage Category start --}}
         <li class="br-menu-item">
-          <a href="#" class="br-menu-link with-sub">
-            <i class="menu-item-icon icon ion-ios-list-outline tx-20"></i>
+          <a href="{{ route('manageCategory') }}" class="br-menu-link">
+            <i class="menu-item-icon ion-ios-list-outline tx-24"></i>
             <span class="menu-item-label">Manage Categories</span>
           </a><!-- br-menu-link -->
-          <ul class="br-menu-sub">
-            <li class="sub-item"><a href="{{ route('manageCategory') }}" class="sub-link">All Categories</a></li>
-            <li class="sub-item"><a href="{{ route('createCategory') }}" class="sub-link">Add New Category</a></li>
-          </ul>
-        </li>
+        </li><!-- br-menu-item -->
         <!-- Manage Category End -->
 
         <!-- Manage Category Start -->  

@@ -15,13 +15,15 @@
          {{--  <h6 class="br-section-label">Card Block</h6>
           <p class="br-section-text">An example some text within a card block.</p> --}}
 
+          {{-- Add brand button --}}
+          <div class="row mg-b-20 justify-content-end">
+          	<a class="btn btn-success " href="{{ route('createBrand') }}">Add New Brand</a>
+          </div>
 
-
-          <div class="row mg-b-20">
-            <div class="col-md">
+          <div class="row mg-b-20">            
               <div class="card card-body"> 	
               
-              	
+              	{{-- Table start --}}
                 <table class="table">
 				  <thead class="thead-dark">
 				    <tr>
@@ -92,7 +94,7 @@
 				</table>
 
               </div><!-- card -->
-            </div><!-- col -->
+            
             
             </div><!-- col -->
           </div><!-- row -->   

@@ -22,12 +22,13 @@
 
     <!-- ########## START: MAIN PANEL ########## -->
       @yield('dashboard-content')
-      
-      @include('backend.includes.footer')
-      
-    </div><!-- br-mainpanel -->
+
+    <div class="br-mainpanel">  
+      @include('backend.includes.footer') 
+    </div><!-- br-mainpanel -->   
 
     <!-- ########## END: MAIN PANEL ########## -->
-    @include('backend.includes.script')
+    
   </body>
+  @include('backend.includes.script')
 </html>

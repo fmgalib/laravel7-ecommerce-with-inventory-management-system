@@ -18,7 +18,6 @@
 
 
           <div class="row mg-b-20">
-            <div class="col-md">
               <div class="card card-body"> 	
               
               	
@@ -105,9 +104,7 @@
 				  </tbody>
 				</table>
 
-              </div><!-- card -->
-            </div><!-- col -->
-            
+              </div><!-- card -->        
             </div><!-- col -->
           </div><!-- row -->   
         </div><!-- br-section-wrapper -->

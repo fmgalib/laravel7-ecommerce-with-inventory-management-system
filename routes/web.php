@@ -33,6 +33,21 @@ Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 |
 */
 
+// Brand Backend Route
+Route::group(['prefix' => '/brands'], function(){
+	// Show manage page
+	Route::get('/manage', 'Backend\BrandController@index')->name('manageBrand');
+	// Show create page and store after submit
+	Route::get('/create', 'Backend\BrandController@create')->name('createBrand'); 
+	Route::post('/create', 'Backend\BrandController@store')->name('storeBrand');
+	// Show edit page and update after submit
+	Route::get('/edit/{id}', 'Backend\BrandController@edit')->name('editBrand');
+	Route::post('/edit/{id}', 'Backend\BrandController@update')->name('updateBrand');
+	// Delete brand
+	Route::post('/delete/{id}', 'Backend\BrandController@destroy')->name('deleteBrand');
+
+});
+
 // Category Backend Route
 Route::group(['prefix' => '/categories'], function(){
 	// Show manage page
@@ -48,20 +63,6 @@ Route::group(['prefix' => '/categories'], function(){
 
 });
 
-// Brand Backend Route
-Route::group(['prefix' => '/brands'], function(){
-	// Show manage page
-	Route::get('/manage', 'Backend\BrandController@index')->name('manageBrand');
-	// Show create page and store after submit
-	Route::get('/create', 'Backend\BrandController@create')->name('createBrand'); 
-	Route::post('/create', 'Backend\BrandController@store')->name('storeBrand');
-	// Show edit page and update after submit
-	Route::get('/edit/{id}', 'Backend\BrandController@edit')->name('editBrand');
-	Route::post('/edit/{id}', 'Backend\BrandController@update')->name('updateBrand');
-	// Delete brand
-	Route::post('/delete/{id}', 'Backend\BrandController@destroy')->name('deleteBrand');
-
-});
 
 // Product Backend Route
 Route::group(['prefix' => '/products'], function(){
