@@ -14,7 +14,11 @@
         <div class="br-section-wrapper">
          {{--  <h6 class="br-section-label">Card Block</h6>
           <p class="br-section-text">An example some text within a card block.</p> --}}
-
+		
+		{{-- Add brand button --}}
+			<div class="row mg-b-20">
+				<a class="btn btn-success " href="{{ route('createProduct') }}">Add New Product</a>
+			</div>
 
 
           <div class="row mg-b-20">
@@ -33,6 +37,7 @@
 				      <th scope="col">Regular Price</th>
 				      <th scope="col">Offer Price</th>
 				      <th scope="col">Quantity</th>
+				      <th scope="col">Featured</th>
 				      <th scope="col">Status</th>				      
 				      <th scope="col">Image</th>
 				      <th scope="col">Action</th>
@@ -51,9 +56,21 @@
 				      <td>{{ $product->reguler_price }}</td>
 				      <td>{{ $product->offer_price }}</td>
 				      <td>{{ $product->quantity }}</td>
-				      <td>{{ $product->status }}</td>		     				      
 				      <td>
-
+							@if($product->is_featured == 1)
+								<span class="badge badge-success">Featured</span>
+							@elseif($product->is_featured == 0)
+								<span class="badge badge-warning">Not Featured</span>
+							@endif
+					  </td>
+				      <td>
+							@if($product->status == 1)
+								<span class="badge badge-success">Published</span>
+							@elseif($product->is_featured == 0)
+								<span class="badge badge-warning">Not Published</span>
+							@endif
+					  </td>		     				      
+				      <td>
 				      	@php $i = 1; @endphp
 				      	@foreach($product->images as $image)
 				      		@if( $i > 0 )

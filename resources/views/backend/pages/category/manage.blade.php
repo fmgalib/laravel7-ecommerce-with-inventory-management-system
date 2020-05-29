@@ -16,7 +16,7 @@
           <p class="br-section-text">An example some text within a card block.</p> --}}
 
 		{{-- Add brand button --}}
-          <div class="row mg-b-20 justify-content-end">
+          <div class="row mg-b-20">
           	<a class="btn btn-success " href="{{ route('createCategory') }}">Add New Category</a>
           </div>
 

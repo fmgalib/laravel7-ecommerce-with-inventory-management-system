@@ -4,13 +4,13 @@
       <ul class="br-sideleft-menu">
         <li class="br-menu-item">
           <a href="{{ route('dashboard') }}" class="br-menu-link">
-            <i class="menu-item-icon icon ion-ios-home-outline tx-24"></i>
+            <i class="menu-item-icon icon ion-ios-home-outline tx-20"></i>
             <span class="menu-item-label">Dashboard</span>
           </a><!-- br-menu-link -->
         </li><!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="mailbox.html" class="br-menu-link">
-            <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+            <i class="menu-item-icon icon ion-ios-email-outline tx-20"></i>
             <span class="menu-item-label">Mailbox</span>
           </a><!-- br-menu-link -->
         </li><!-- br-menu-item -->
@@ -18,7 +18,7 @@
         {{-- Manage Brand start --}}
         <li class="br-menu-item">
           <a href="{{ route('manageBrand') }}" class="br-menu-link">
-            <i class="menu-item-icon ion-ios-briefcase-outline tx-24"></i>
+            <i class="fas fa-briefcase"></i>
             <span class="menu-item-label">Manage Brands</span>
           </a><!-- br-menu-link -->
         </li><!-- br-menu-item -->
@@ -27,24 +27,20 @@
         {{-- Manage Category start --}}
         <li class="br-menu-item">
           <a href="{{ route('manageCategory') }}" class="br-menu-link">
-            <i class="menu-item-icon ion-ios-list-outline tx-24"></i>
+            <i class="fas fa-list"></i>
             <span class="menu-item-label">Manage Categories</span>
           </a><!-- br-menu-link -->
         </li><!-- br-menu-item -->
         <!-- Manage Category End -->
 
-        <!-- Manage Category Start -->  
+        <!-- Manage Product Start -->  
         <li class="br-menu-item">
-          <a href="#" class="br-menu-link with-sub">
-            <i class="menu-item-icon icon ion-ios-list-outline tx-20"></i>
+          <a href="{{ route('manageProduct') }}" class="br-menu-link">
+            <i class="fab fa-product-hunt"></i>
             <span class="menu-item-label">Manage Products</span>
           </a><!-- br-menu-link -->
-          <ul class="br-menu-sub">
-            <li class="sub-item"><a href="{{ route('manageProduct') }}" class="sub-link">All Products</a></li>
-            <li class="sub-item"><a href="{{ route('createProduct') }}" class="sub-link">Add New Product</a></li>
-          </ul>
-        </li>
-        <!-- Manage Category End -->
+        </li><!-- br-menu-item -->
+        <!-- Manage Product End -->
 
         
         <li class="br-menu-item">

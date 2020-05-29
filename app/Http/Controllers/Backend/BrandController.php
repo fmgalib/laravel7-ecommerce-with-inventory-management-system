@@ -67,6 +67,7 @@ class BrandController extends Controller
             $location = public_path('images/brands/' . $img);
             Image::make($image)->save($location);
             $brand->image = $img; 
+            
         }
 
         $brand->save();
