@@ -51,6 +51,15 @@
         </li><!-- br-menu-item -->
         <!-- Manage Division End -->
 
+        <!-- Manage Dsitrict Start -->  
+        <li class="br-menu-item">
+          <a href="{{ route('manageDistrict') }}" class="br-menu-link">
+            <i class="fab fa-product-hunt"></i>
+            <span class="menu-item-label">All Districts</span>
+          </a><!-- br-menu-link -->
+        </li><!-- br-menu-item -->
+        <!-- Manage Dsitrict End -->
+
         
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">

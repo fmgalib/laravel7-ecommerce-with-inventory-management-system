@@ -5,8 +5,8 @@
 	<div class="br-pagetitle">
 		<i class="icon ion-ios-home-outline"></i>
 		<div>
-			<h4>Division List</h4>
-			<p class="mg-b-0">Manage Divisions</p>
+			<h4>District List</h4>
+			<p class="mg-b-0">Manage Districts</p>
 		</div>
 	</div>
 
@@ -17,7 +17,7 @@
 
 			{{-- Add brand button --}}
 			<div class="row mg-b-20">
-				<a class="btn btn-success " href="{{ route('createDivision') }}">Add New Division</a>
+				<a class="btn btn-success " href="{{ route('createDistrict') }}">Add New District</a>
 			</div>
 
 			{{-- Table starts --}}
@@ -29,8 +29,8 @@
 						<thead class="thead-dark">
 							<tr>
 								<th scope="col">#Sl</th>
+								<th scope="col">District Name</th>
 								<th scope="col">Division Name</th>
-								<th scope="col">Priority List</th>
 								<th scope="col">Action</th>
 							</tr>
 						</thead>
@@ -38,32 +38,32 @@
 							@php
 							$i = 0;
 							@endphp
-							@foreach($divisions as $division)
+							@foreach($districts as $district)
 							<tr>
 								<th scope="row">{{ ++ $i }}</th>
-								<td>{{ $division->name }}</td>
-								<td>{{ $division->priority }}</td>
+								<td>{{ $district->name }}</td>
+								<td>{{ $district->division->name }}</td>
 								<td>
 									<div class="btn-group">
-										<a class="btn btn-success btn-sm" href="{{ route('editDivision', $division->id ) }}">Edit</a>
-										<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteDivision{{$division->id}}">Delete</button>
+										<a class="btn btn-success btn-sm" href="{{ route('editDistrict', $district->id ) }}">Edit</a>
+										<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteDistrict{{$district->id}}">Delete</button>
 									</div>
 
 									<!-- Modal -->
-									<div class="modal fade" id="deleteDivision{{$division->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal fade" id="deleteDistrict{{$district->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">
 												<div class="modal-header">
-													<h5 class="modal-title" id="exampleModalLabel">Delete Division</h5>
+													<h5 class="modal-title" id="exampleModalLabel">Delete District</h5>
 													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 														<span aria-hidden="true">&times;</span>
 													</button>
 												</div>
 												<div class="modal-body">
-													Do you want to delete this division?
+													Do you want to delete this District?
 												</div>
 												<div class="modal-footer">
-													<form action="{{ route('deleteDivision', $division->id) }}" method="POST">
+													<form action="{{ route('deleteDistrict', $district->id) }}" method="POST">
 														@csrf
 														<button type="submit" class="btn btn-danger">Delete</button> 
 													</form>

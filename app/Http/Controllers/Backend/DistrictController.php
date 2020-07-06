@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Backend\Division;
+use App\Models\Backend\District;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class DistrictController extends Controller
 {
@@ -14,7 +18,8 @@ class DistrictController extends Controller
      */
     public function index()
     {
-        //
+        $districts = District::orderBy('name', 'asc')->get();
+        return view('backend.pages.district.manage', compact('districts'));
     }
 
     /**
@@ -24,7 +29,7 @@ class DistrictController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages.district.create');
     }
 
     /**
@@ -35,7 +40,22 @@ class DistrictController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // District Field Validation
+        $request->validate([
+            'name'           => 'required|max:255', 
+            'division_id'    => 'required', 
+        ],
+        [
+            'name'           => 'Please provide valid division name', 
+            'division_id'    => 'Please select a division', 
+        ]);
+
+        $district = new District();
+        $district->name         = $request->name;
+        $district->division_id  = $request->division_id;
+        $district->save();
+
+        return redirect()->route('manageDistrict');
     }
 
     /**
@@ -57,7 +77,12 @@ class DistrictController extends Controller
      */
     public function edit($id)
     {
-        //
+        $district = District::find($id);
+        if (!is_null($district)) {
+            return view('backend.pages.district.edit', compact('district'));
+        }else {
+            return view('backend.pages.district.manage');
+        }
     }
 
     /**
@@ -69,7 +94,22 @@ class DistrictController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /// District Field Validation
+        $request->validate([
+            'name'           => 'required|max:255', 
+            'division_id'    => 'required', 
+        ],
+        [
+            'name'           => 'Please provide valid division name', 
+            'division_id'    => 'Please select a division', 
+        ]);
+
+        $district = District::find($id);
+        $district->name         = $request->name;
+        $district->division_id  = $request->division_id;
+        $district->save();
+
+        return redirect()->route('manageDistrict');
     }
 
     /**
@@ -80,6 +120,12 @@ class DistrictController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $district = District::find($id);
+        if (!is_null($district)) {
+            
+            $district->delete();
+        }
+
+        return redirect()->route('manageDistrict');
     }
 }

@@ -112,7 +112,7 @@
                 </div>
               </div>
 	        	  
-			      	<input type="submit" name="addProduct" value="Add Product" class="btn btn-primary">
+			      	<input type="submit" name="updateProduct" value="Update" class="btn btn-primary">
 			        
 			      </div>
 		       </form>

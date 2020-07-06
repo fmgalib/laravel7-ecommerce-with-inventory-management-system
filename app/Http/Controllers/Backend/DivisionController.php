@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Backend\Division;
+use App\Models\Backend\District;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -77,7 +78,12 @@ class DivisionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $division = Division::find($id);
+        if (!is_null($division)) {
+            return view('backend.pages.division.edit', compact('division'));
+        }else {
+            return view('backend.pages.division.manage');
+        }
     }
 
     /**
@@ -89,7 +95,23 @@ class DivisionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       // Division Field Validation
+        $request->validate([
+            'name'           => 'required|max:255', 
+            'priority'       => 'required', 
+        ],
+        [
+            'name'           => 'Please provide valid division name', 
+            'priority'       => 'Please set a priority number to show on screen', 
+        ]);
+
+        $division = Division::find($id);
+        $division->name     = $request->name;
+        $division->priority = $request->priority;
+
+        $division->save();
+
+        return redirect()->route('manageDivision');
     }
 
     /**
@@ -100,6 +122,15 @@ class DivisionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $division = Division::find($id);
+        if (!is_null($division)) {
+            $districts = District::where('division_id', $division->id)->get();
+            foreach ($districts as $district) {
+                $district->delete();
+            }
+            $division->delete();
+        }
+
+        return redirect()->route('manageDivision');
     }
 }

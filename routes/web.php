@@ -93,3 +93,18 @@ Route::group(['prefix' => '/divisions'], function(){
 	Route::post('/delete/{id}', 'Backend\DivisionController@destroy')->name('deleteDivision');
 
 });
+
+// Dsitrict Backend Route
+Route::group(['prefix' => '/districts'], function(){
+	// Show manage page
+	Route::get('/manage', 'Backend\DistrictController@index')->name('manageDistrict');
+	// Show create page and store after submit
+	Route::get('/create', 'Backend\DistrictController@create')->name('createDistrict'); 
+	Route::post('/create', 'Backend\DistrictController@store')->name('storeDsitrict');
+	// Show edit page and update after submit
+	Route::get('/edit/{id}', 'Backend\DistrictController@edit')->name('editDistrict');
+	Route::post('/edit/{id}', 'Backend\DistrictController@update')->name('updateDistrict');
+	// Delete product
+	Route::post('/delete/{id}', 'Backend\DistrictController@destroy')->name('deleteDistrict');
+
+});
