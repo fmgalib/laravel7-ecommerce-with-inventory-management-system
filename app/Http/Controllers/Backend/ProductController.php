@@ -104,7 +104,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return view('backend.pages.product.edit', compact('product'));
     }
 
     /**

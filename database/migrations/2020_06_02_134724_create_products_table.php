@@ -14,6 +14,7 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
+            
             $table->increments('id');
             $table->string('title')->unique();
             $table->string('slug');
@@ -26,7 +27,6 @@ class CreateProductsTable extends Migration
             $table->integer('brand_id')->unsigned();
             $table->integer('is_featured')->default(0);
             $table->timestamps();
-
         });
     }
 

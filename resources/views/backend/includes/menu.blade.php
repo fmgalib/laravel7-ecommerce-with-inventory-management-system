@@ -42,6 +42,15 @@
         </li><!-- br-menu-item -->
         <!-- Manage Product End -->
 
+        <!-- Manage Division Start -->  
+        <li class="br-menu-item">
+          <a href="{{ route('manageDivision') }}" class="br-menu-link">
+            <i class="fab fa-product-hunt"></i>
+            <span class="menu-item-label">All Divisions</span>
+          </a><!-- br-menu-link -->
+        </li><!-- br-menu-item -->
+        <!-- Manage Division End -->
+
         
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">

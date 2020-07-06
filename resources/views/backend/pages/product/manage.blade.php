@@ -81,7 +81,7 @@
 				      </td>
 				      <td>
 				      	<div class="btn-group">
-				      		<a class="btn btn-success btn-sm" href="">Edit</a>
+				      		<a class="btn btn-success btn-sm" href="{{ route('editProduct', $product->id) }}">Edit</a>
 				      		<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="">Delete</button>
 				      	</div>
 

@@ -78,3 +78,18 @@ Route::group(['prefix' => '/products'], function(){
 	Route::post('/delete/{id}', 'Backend\ProductController@destroy')->name('deleteProduct');
 
 });
+
+// Division Backend Route
+Route::group(['prefix' => '/divisions'], function(){
+	// Show manage page
+	Route::get('/manage', 'Backend\DivisionController@index')->name('manageDivision');
+	// Show create page and store after submit
+	Route::get('/create', 'Backend\DivisionController@create')->name('createDivision'); 
+	Route::post('/create', 'Backend\DivisionController@store')->name('storeDivision');
+	// Show edit page and update after submit
+	Route::get('/edit/{id}', 'Backend\DivisionController@edit')->name('editDivision');
+	Route::post('/edit/{id}', 'Backend\DivisionController@update')->name('updateDivision');
+	// Delete product
+	Route::post('/delete/{id}', 'Backend\DivisionController@destroy')->name('deleteDivision');
+
+});
